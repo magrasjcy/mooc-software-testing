@@ -7,11 +7,11 @@ public class BlackJack {
         int rn = right;
         if(ln > 21)
             ln = 0;
-        if(rn > 21)
-            rn = 0;
-        if(ln > rn)
-            return ln;
-        else
+       // if(rn > 21)
+       //     rn = 0;
+        //i//f(ln > rn)
+        ///    return ln;
+        ///else
             return rn;
     }
 }
