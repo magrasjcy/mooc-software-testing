@@ -10,21 +10,23 @@ class TwoNumbersSum {
         Collections.reverse(first);
         Collections.reverse(second);
 
-        int complement = 0;
+        int complement = 0,lasti=0,total=0;
         ArrayList<Integer> result = new ArrayList<>();
 
         for(int i = 0; i < Math.max(first.size(), second.size()); i++){
             int firstVal = i < first.size() ? first.get(i) : 0;
             int secondVal = i < second.size() ? second.get(i) : 0;
-            int total = firstVal + secondVal + complement;
+            total = firstVal + secondVal + complement;
             complement = 0;
             if (total >= 10){
                 complement = 1;
                 total -= 10;
             }
             result.add(i, total);
+            lasti=i;
         }
-
+        if (total>0 || complement !=0)
+            result.add(lasti+1,complement);
         Collections.reverse(result);
         return result;
     }
